@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>Crowd Surfing</title>
+	
+	<link rel="stylesheet" href="styles/mian.css?3">
+	<script type="text/javascript" src="scripts/common.js"></script>
+	
+	<script type="text/javascript">
+		cm.onload(function(){
+			// Disable main scroll
+			(function(){
+				document.body.addEventListener('touchmove', function(e){
+					e.preventDefault();
+				}, false);
+				var els = document.querySelectorAll('.scroll');
+				Array.prototype.forEach.call(els, function(item){
+					item.addEventListener('touchmove', function(e){
+						e.stopPropagation();
+					}, false);
+				});
+			})();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="join-service-layout scroll">
+	<div class="inner">
+		<div class="header-service email">
+			<div class="image"></div>
+			<div class="text">Join Crowdsurfing</div>
+		</div>
+		
+		<div class="content">
+			<form action="crowd.html">
+				<input type="text" placeholder="First name">
+                <select>
+                	<option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+				<input type="text" placeholder="Last name">
+			</form>
+		</div>
+		
+		<div class="footer">
+			<div class="bottom-panel">
+				<a class="back-button" href="join.html"><span class="arrow-back"></span>Back</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

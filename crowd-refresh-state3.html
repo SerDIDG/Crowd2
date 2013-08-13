@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>Crowd Surfing</title>
+	
+	<link rel="stylesheet" href="styles/mian.css?38">
+	<script type="text/javascript" src="scripts/common.js"></script>
+	
+	<script type="text/javascript">
+		cm.onload(function(){
+			// Disable main scroll
+			(function(){
+				document.body.addEventListener('touchmove', function(e){
+					e.preventDefault();
+				}, false);
+				var els = document.querySelectorAll('.scroll');
+				Array.prototype.forEach.call(els, function(item){
+					item.addEventListener('touchmove', function(e){
+						e.stopPropagation();
+					}, false);
+				});
+			})();
+			// Avatars Sample
+			(function(){
+				var els = document.querySelectorAll('.avatars-list .item');
+				Array.prototype.forEach.call(els, function(item, i){
+					var a = item.querySelector('.inner'),
+						img = item.querySelector('img');
+						
+					setTimeout(function(){
+						cm.addClass(a, 'loaded');
+						setTimeout(function(){
+							cm.addClass(img, 'loaded');
+						}, 100)
+					}, i * 100)
+				});
+			})();
+			// Toggle Menu Sample
+			(function(){
+				var button = cm.getByClass('menu-button')[0],
+					container = cm.getByClass('fixed-layout')[0],
+					handler = function(){
+						if(isOpen){
+							cm.removeClass(container, 'open');
+						}else{
+							cm.addClass(container, 'open');
+						}
+						isOpen = !isOpen;
+					},
+					isOpen = false;
+				cm.addEvent(button, 'mousedown', handler);
+				cm.addEvent(button, 'touchstart', handler);
+			})();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="fixed-layout main-layout inner-scroll">
+		
+	<div class="left-side">
+		<div class="title">Menu</div>
+		<div class="user-box">
+			<div class="image">
+				<img src="images/samples/avatar-menu.jpg" alt="">
+			</div>
+			<div class="name">Alice R.</div>
+			<div class="country">USA</div>
+		</div>
+		<a class="leftmenu-button signout" href="start.html">Sing out</a>
+	</div>
+	
+	<div class="right-side">
+	
+		<div class="header">
+			<div class="inner">
+				<div class="menu-button" onTouchStart="">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="main-menu">
+					<ul>
+						<li class="tab-crowd active">
+							<a href="#">Crowd</a>
+						</li>
+						<li class="tab-notes">
+							<a href="notes.html">Notes</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="content scroll">
+			<div class="refresher refreshing" style="height: 32px;">
+				<div class="circle"></div>
+				<div class="bottom">
+					<div class="arrow-bottom"></div>
+					<div class="loader small"></div>
+					<div class="text">refreshing</div>
+				</div>
+			</div>
+			
+			<div class="page-crowd">
+				<div class="avatars-list">
+                
+                	<div class="row clear">
+                        <div class="item">
+                            <div class="inner">
+                                <div class="location-mark"></div>
+                                <img src="images/samples/crowd/1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/3.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/4.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row clear">
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/5.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/6.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/7.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/8.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row clear">
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/9.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/10.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/11.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/12.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row clear">
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/13.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/14.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/15.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/16.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row clear">
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/17.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/18.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/19.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/20.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row clear">
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/21.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/22.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/23.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/24.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row clear">
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/3.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/4.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row clear">
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/5.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/6.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/7.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="inner">
+                                <img src="images/samples/crowd/8.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+				</div>
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+</body>
+</html>

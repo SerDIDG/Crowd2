@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>Crowd Surfing</title>
+	
+	<link rel="stylesheet" href="styles/mian.css?24">
+	<script type="text/javascript" src="scripts/common.js"></script>
+	
+	<script type="text/javascript">
+		cm.onload(function(){
+			// Disable main scroll
+			(function(){
+				document.body.addEventListener('touchmove', function(e){
+					e.preventDefault();
+				}, false);
+				var els = document.querySelectorAll('.scroll');
+				Array.prototype.forEach.call(els, function(item){
+					item.addEventListener('touchmove', function(e){
+						e.stopPropagation();
+					}, false);
+				});
+			})();
+			// Toggle Menu Sample
+			(function(){
+				var button = cm.getByClass('menu-button')[0],
+					container = cm.getByClass('fixed-layout')[0],
+					handler = function(){
+						if(isOpen){
+							cm.removeClass(container, 'open');
+						}else{
+							cm.addClass(container, 'open');
+						}
+						isOpen = !isOpen;
+					},
+					isOpen = false;
+				cm.addEvent(button, 'mousedown', handler);
+				cm.addEvent(button, 'touchstart', handler);
+			})();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="fixed-layout main-layout inner-scroll">
+	
+	<div class="left-side">
+		<div class="title">Menu</div>
+		<div class="user-box">
+			<div class="image">
+				<img src="images/samples/avatar-menu.jpg" alt="">
+			</div>
+			<div class="name">Alice R.</div>
+			<div class="country">USA</div>
+		</div>
+		<a class="leftmenu-button signout" href="start.html">Sing out</a>
+	</div>
+	
+	<div class="right-side">
+	
+		<div class="header">
+			<div class="inner">
+				<div class="menu-button">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="main-menu">
+					<ul>
+						<li class="tab-crowd">
+							<a href="crowd.html">Crowd</a>
+						</li>
+						<li class="tab-notes active">
+							<a href="#">Notes</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="content scroll">
+			<div class="page-notes">
+            	<ul class="posts-list">
+                	<li>
+                    	<div class="post">
+                        	<div class="post-image">
+                            	<img src="images/samples/notes-image-preview.jpg" alt="">
+                            </div>
+                            <div class="post-text">Here are couple photos from my concert.</div>
+                            <div class="user-box clear">
+                                <div class="image">
+                                    <img src="images/samples/avatar-notes.jpg" alt="">
+                                </div>
+                                <div class="name">Bob C.</div>
+                                <div class="time">1 hour ago</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="post">
+                            <div class="post-text">Italian wine is wine produced in Italy, a country which is home to some of the oldest wine-producing...</div>
+                            <div class="user-box clear">
+                                <div class="image">
+                                    <img src="images/samples/avatar-notes.jpg" alt="">
+                                </div>
+                                <div class="name">Bob C.</div>
+                                <div class="time">1 hour ago</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+		</div>
+	
+	</div>
+</div>
+
+<div class="post-adder fadein">
+    <div class="text"></div>
+    <div class="photo"></div>
+</div>
+
+</body>
+</html>

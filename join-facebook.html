@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>Crowd Surfing</title>
+	
+	<link rel="stylesheet" href="styles/mian.css?3">
+	<script type="text/javascript" src="scripts/common.js"></script>
+	
+	<script type="text/javascript">
+		cm.onload(function(){
+			// Disable main scroll
+			(function(){
+				document.body.addEventListener('touchmove', function(e){
+					e.preventDefault();
+				}, false);
+				var els = document.querySelectorAll('.scroll');
+				Array.prototype.forEach.call(els, function(item){
+					item.addEventListener('touchmove', function(e){
+						e.stopPropagation();
+					}, false);
+				});
+			})();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="join-service-layout scroll">
+	<div class="inner">
+		<div class="header-service facebook">
+			<div class="image"></div>
+			<div class="text">Join Crowdsurfing</div>
+		</div>
+		
+		<div class="content">
+			<form action="crowd.html">
+				<input type="text" placeholder="First name">
+				<input type="text" placeholder="Last name">
+				<div class="gender-input">
+					<input type="radio" checked id="male" name="gender">
+					<label for="male">
+						<span>Male</span>
+					</label>
+					<input type="radio" id="female" name="gender">
+					<label for="female">
+						<span>Female</span>
+					</label>
+				</div>
+				<input type="password" placeholder="Password">
+				<input type="email" placeholder="Email">
+				<div class="cols three date-inputs clear">
+					<div class="col">
+						<input type="text" placeholder="Month">
+					</div>
+					<div class="col">
+						<input type="text" placeholder="Date">
+					</div>
+					<div class="col">
+						<input type="text" placeholder="Year">
+					</div>
+				</div>
+				<div class="check-line">
+					<input type="checkbox" id="accept">
+					<label for="accept">I accepted the <a href="terms.html">Terms and Conditions</a></label>
+				</div>
+				<div class="submit-box">
+					<input type="submit" class="button-primary" value="Join">
+				</div>
+			</form>
+		</div>
+		
+		<div class="footer">
+			<div class="bottom-panel">
+				<a class="back-button" href="join.html"><span class="arrow-back"></span>Back</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

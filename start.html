@@ -1,0 +1,391 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>Crowd Surfing</title>
+	
+	<link rel="stylesheet" href="styles/mian.css?3">
+	<script type="text/javascript" src="scripts/common.js"></script>
+	
+	<script type="text/javascript">
+		cm.onload(function(){
+			// Disable main scroll
+			(function(){
+				document.body.addEventListener('touchmove', function(e){
+					e.preventDefault();
+				}, false);
+				var els = document.querySelectorAll('.scroll');
+				Array.prototype.forEach.call(els, function(item){
+					item.addEventListener('touchmove', function(e){
+						e.stopPropagation();
+					}, false);
+				});
+			})();
+			// Avatars Sample
+			(function(){
+				var els = document.querySelectorAll('.avatars-list .item');
+				for(var i = els.length - 1, n = 0; i >= 0; i--, n++){
+					(function(){
+						var z = i,
+							zN = n,
+							a = els[z].querySelector('.inner'),
+							img = els[z].querySelector('img');
+							
+						setTimeout(function(){
+							cm.addClass(a, 'loaded');
+							setTimeout(function(){
+								cm.addClass(img, 'loaded');
+							}, 100)
+						}, zN * 100)
+					})();
+				}
+			})();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="start-layout">
+
+	<div class="avatars-list">
+		<div class="row clear">
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/1.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/2.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/3.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/4.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/5.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/6.jpg" alt="">
+                </div>
+            </div>
+		</div>
+		<div class="row clear">
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/7.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/8.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/9.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/10.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/11.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/12.jpg" alt="">
+                </div>
+            </div>
+		</div>
+		<div class="row clear">
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/13.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/14.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/15.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/16.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/17.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/18.jpg" alt="">
+                </div>
+            </div>
+		</div>
+		<div class="row clear">
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/19.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/20.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/21.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/22.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/23.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/24.jpg" alt="">
+                </div>
+            </div>
+		</div>
+		<div class="row clear">
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/25.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/26.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/27.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/28.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/29.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/30.jpg" alt="">
+                </div>
+            </div>
+		</div>
+		<div class="row clear">
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/31.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/32.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/33.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/34.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/35.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/36.jpg" alt="">
+                </div>
+            </div>
+		</div>
+		<div class="row clear">
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/1.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/2.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/3.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/4.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/5.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/6.jpg" alt="">
+                </div>
+            </div>
+		</div>
+		<div class="row clear">
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/7.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/8.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/9.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/10.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/11.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/12.jpg" alt="">
+                </div>
+            </div>
+		</div>
+		<div class="row clear">
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/13.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/14.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/15.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/16.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/17.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/18.jpg" alt="">
+                </div>
+            </div>
+		</div>
+		<div class="row clear">
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/19.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/20.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/21.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/22.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/23.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <img src="images/samples/start/24.jpg" alt="">
+                </div>
+            </div>
+		</div>
+	</div>
+	
+	<div class="start-overlay"></div>
+	
+	<div class="start-logo">
+		<img src="images/start-logo-resizer.png" alt="">
+	</div>
+	
+	<div class="start-buttons">
+		<a href="join.html" class="button button-primary">Join Crowd</a>
+		<a href="sign.html" class="button">Sing In</a>
+	</div>
+	
+</div>
+
+</body>
+</html>

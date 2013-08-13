@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>Crowd Surfing</title>
+	
+	<link rel="stylesheet" href="styles/mian.css?43">
+	<script type="text/javascript" src="scripts/common.js?3"></script>
+	
+	<script type="text/javascript">
+		cm.onload(function(){
+			// Disable main scroll
+			(function(){
+				document.body.addEventListener('touchmove', function(e){
+					e.preventDefault();
+				}, false);
+				var els = document.querySelectorAll('.scroll');
+				Array.prototype.forEach.call(els, function(item){
+					item.addEventListener('touchmove', function(e){
+						e.stopPropagation();
+					}, false);
+				});
+			})();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="fixed-layout inner-scroll">
+
+	<div class="header">
+		<a class="back-button in-header" href="notes.html">
+			<span class="arrow-back"></span>Cancel
+		</a>
+	</div>
+	
+	<div class="content scroll">
+    	<div class="post is-self">
+        	<div class="post-text selectable" contenteditable="true">Here are couple photos from my concert.</div>
+            <div class="post-image">
+                <img src="images/samples/notes-image-preview.jpg" alt="">
+            </div>
+        </div>
+	</div>
+		
+</div>
+
+<div class="uploader fadein">
+	<div class="close"></div>
+	<div class="image">
+    	<img src="images/samples/notes-image-small.jpg" alt="">
+    </div>
+    <div class="bar">
+    	<div class="progress" style="width:80%;"></div>
+    </div>
+</div>
+
+<div class="post-button">
+	<input type="button" class="button-primary" value="Post">
+</div>
+
+</body>
+</html>

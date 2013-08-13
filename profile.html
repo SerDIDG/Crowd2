@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>Crowd Surfing</title>
+	
+	<link rel="stylesheet" href="styles/mian.css?43">
+	<script type="text/javascript" src="scripts/common.js?3"></script>
+	
+	<script type="text/javascript">
+		cm.onload(function(){
+			// Disable main scroll
+			(function(){
+				document.body.addEventListener('touchmove', function(e){
+					e.preventDefault();
+				}, false);
+				var els = document.querySelectorAll('.scroll');
+				Array.prototype.forEach.call(els, function(item){
+					item.addEventListener('touchmove', function(e){
+						e.stopPropagation();
+					}, false);
+				});
+			})();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="fixed-layout inner-scroll">
+
+	<div class="header">
+		<a class="back-button in-header" href="crowd.html">
+			<span class="arrow-back"></span>
+		</a>
+		<div class="header-inner">Profile</div>
+	</div>
+	
+	<div class="content scroll">
+		<div class="page-profile">
+			<div class="user-box in-profile clear">
+				<div class="image">
+					<img src="images/samples/avatar-crowd-big.jpg" alt="">
+					<div class="location-mark"></div>
+				</div>
+				<div class="name">Alice R.</div>
+				<div class="country">USA</div>
+			</div>
+			
+			<div class="comments-list">
+				<ul>
+					<li>
+						<div class="text">I gave Rusty a bone and he gave me a smite!</div>
+						<div class="date">15m ago</div>
+					</li>
+					<li>
+						<div class="text">Here are couple of pics from my last All Star game. It was very emotional for me, I’ll miss the game of basketball a lot.</div>
+						<div class="date">15m ago</div>
+					</li>
+					<li>
+						<div class="text">Hey! How are you? Have you already seen new “Chinese Zodiac” trailer?</div>
+						<div class="date">15m ago</div>
+					</li>
+					<li>
+						<div class="text">I gave Rusty a bone and he gave me a smite!</div>
+						<div class="date">15m ago</div>
+					</li>
+					<li>
+						<div class="text">Here are couple of pics from my last All Star game. It was very emotional for me, I’ll miss the game of basketball a lot.</div>
+						<div class="date">15m ago</div>
+					</li>
+					<li>
+						<div class="text">Hey! How are you? Have you already seen new “Chinese Zodiac” trailer?</div>
+						<div class="date">15m ago</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+		
+</div>
+
+</body>
+</html>
