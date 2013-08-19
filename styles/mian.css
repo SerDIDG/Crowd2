@@ -763,6 +763,9 @@ button[disabled].button-primary
 .post.is-self {
     padding: 4px;
 }
+.post-text {
+	font-size: 15px;
+}
 .post-image + .post-text {
     margin: 6px 0 0 0;
 }
@@ -783,29 +786,32 @@ button[disabled].button-primary
 }
 .post .user-box .time {
     position: relative;
-    top: -5px;
+    top: -6px;
+	margin: 0 0 -2px 0;
+	line-height: 18px;
 	color: #666666;
 }
 
 /* Post Adder */
 
 .post-adder {
-    width: 66px;
-    height: 66px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 1000;
+    width: 41px;
+    height: 41px;
+    position: absolute;
+	top: 0;
+	left: 50%;
+    z-index: 2;
+	margin: 0 0 0 -20px;
+	cursor: pointer;
 }
-.post-adder:after,
 .post-adder .photo,
 .post-adder .text {
-    width: 100%;
-    height: 100%;
+    width: 66px;
+    height: 66px;
     position: absolute;
     top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.7);
+    left: -12px;
+    background-color: #141516;
     background-size: 100% 100%;
     -webkit-transition: all 0.3s ease-in-out;
     -mos-transition: all 0.3s ease-in-out;
@@ -813,11 +819,53 @@ button[disabled].button-primary
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-.post-adder:after {
-    display: block;
-    content: ' ';
-    z-index: 3;
-    background-image: url(../images/1/add.png);
+.post-adder .logo {
+	width: 51px;
+    height: 100%;
+	position: absolute;
+	top: 0;
+	left: -5px;
+	overflow: hidden;
+}
+.post-adder .logo:before {
+	width: 51px;
+	height: 51px;
+	position: absolute;
+	top: -5px;
+	left: 0;
+	display: block;
+	content: ' ';
+	background: #141516;
+	border-radius: 51px;
+}
+.post-adder .logo .icon {
+	width: 39px;
+	height: 39px;
+	display: block;
+	position: absolute;
+	top: 1px;
+	left: 5px;
+	content: ' ';
+	border-radius: 39px;
+}
+.post-adder .logo .icon:after {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	content: ' ';
+	background: url(../images/1/add.png);
+	background-size: 100% 100%;
+}
+.post-adder:active .icon {
+	background: #b9162e;
+    background: -webkit-linear-gradient(top, #b9162e 0%, #941225 100%);
+    background:    -moz-linear-gradient(top, #b9162e 0%, #941225 100%);
+    background:     -ms-linear-gradient(top, #b9162e 0%, #941225 100%);
+    background:      -o-linear-gradient(top, #b9162e 0%, #941225 100%);
+    background:         linear-gradient(top, #b9162e 0%, #941225 100%);
 }
 .post-adder .photo {
     background-image: url(../images/1/add-photo.png);
@@ -827,43 +875,35 @@ button[disabled].button-primary
     background-image: url(../images/1/add-text.png);
     opacity: 0;
 }
-.post-adder:active:after,
 .post-adder .photo.fadein,
 .post-adder .text.fadein {
-    background-color: #1873ba;
-    background-color: -webkit-linear-gradient(top, #1b8ce5 0%, #1873ba 100%);
-    background-color:    -moz-linear-gradient(top, #1b8ce5 0%, #1873ba 100%);
-    background-color:     -ms-linear-gradient(top, #1b8ce5 0%, #1873ba 100%);
-    background-color:      -o-linear-gradient(top, #1b8ce5 0%, #1873ba 100%);
-    background-color:         linear-gradient(top, #1b8ce5 0%, #1873ba 100%);
+	background-color: #b9162e;
 }
+
 /* Does not work on iOS, but creates some ugly visual bugs, use class "fadein" for it.
-.post-adder:active:after,
+
 .post-adder .photo:hover,
 .post-adder .text:hover {
-	background-color: #1873ba;
-    background-color: -webkit-linear-gradient(top, #1b8ce5 0%, #1873ba 100%);
-    background-color:    -moz-linear-gradient(top, #1b8ce5 0%, #1873ba 100%);
-    background-color:     -ms-linear-gradient(top, #1b8ce5 0%, #1873ba 100%);
-    background-color:      -o-linear-gradient(top, #1b8ce5 0%, #1873ba 100%);
-    background-color:         linear-gradient(top, #1b8ce5 0%, #1873ba 100%);
+	background-color: #b9162e;
 }
+
 */
+
 .post-adder:active .photo {
     opacity: 1;
-    -webkit-transform: translateY(-67px);
-    -moz-transform: translateY(-67px);
-    -ms-transform: translateY(-67px);
-    -o-transform: translateY(-67px);
-    transform: translateY(-67px);
+    -webkit-transform: translate(34px, -76px);
+    -moz-transform: translate(34px, -76px);
+    -ms-transform: translate(34px, -76px);
+    -o-transform: translate(34px, -76px);
+    transform: translate(34px, -76px);
 }
 .post-adder:active .text {
     opacity: 1;
-    -webkit-transform: translateX(-67px);
-    -moz-transform: translateX(-67px);
-    -ms-transform: translateX(-67px);
-    -o-transform: translateX(-67px);
-    transform: translateX(-67px);
+    -webkit-transform: translate(-34px, -76px);
+    -moz-transform: translate(-34px, -76px);
+    -ms-transform: translate(-34px, -76px);
+    -o-transform: translate(-34px, -76px);
+    transform: translate(-34px, -76px);
 }
 
 /* Post Button */
@@ -1036,6 +1076,9 @@ button[disabled].button-primary
 .back-button.in-header .arrow-back {
     top: 10px;
 }
+.back-button.in-footer {
+	color: #fff;
+}
 
 /* Location Mark */
 
@@ -1049,6 +1092,11 @@ button[disabled].button-primary
     z-index: 2;
 	background: #b9162e url(../images/1/location-mark.png);
 	background-size: 100% 100%;
+}
+.location-mark.big {
+	width: 23px;
+	height: 23px;
+	background-image: url(../images/1/location-mark-big.png);
 }
 
 /* Headers */
@@ -1375,7 +1423,7 @@ button[disabled].button-primary
 .uploader .progress {
     width: 0;
     height: 11px;
-    background: #1974bc;
+    background: #b9162e;
 }
 
 /* Dialog */
@@ -1503,7 +1551,7 @@ button[disabled].button-primary
 
 .refresher.active .arrow-bottom:after,
 .refresher.active .arrow-bottom:before {
-    background: #1979c5;
+    background: #b9162e;
 }
 
 .refresher.refreshing {
@@ -1526,6 +1574,9 @@ button[disabled].button-primary
 	top: auto;
 	bottom: 0;
 	background: #141516;
+}
+.main-layout .header > .inner {
+	padding: 0 0 0 4px;
 }
 .main-layout.inner-scroll .content,
 .main-layout .content {
@@ -1620,7 +1671,9 @@ button[disabled].button-primary
 /* Tabs */
 
 .main-menu {
-    overflow: hidden;
+	height: 100%;
+	margin: 0 0 0 24px;
+	position: relative;
 }
 .main-menu ul {
     margin: 0;
@@ -1633,7 +1686,7 @@ button[disabled].button-primary
 }
 .main-menu a {
     height: 41px;
-    display: block;
+    display: block; 
     position: relative;
 	font-family: Mostra Nuova;
     text-align: center;
@@ -1643,6 +1696,12 @@ button[disabled].button-primary
     color: #979797;
 	text-transform: uppercase;
 	text-decoration: none;
+}
+.main-menu li:nth-child(1) a {
+	padding: 0 21px 0 0;
+}
+.main-menu li:nth-child(2) a {
+	padding: 0 0 0 21px;
 }
 
 .main-menu li.active a {
@@ -1934,6 +1993,7 @@ button[disabled].button-primary
     padding: 6px 6px 0;
     margin: 0 0 -5px;
     clear: both;
+	font-size: 15px;
     color: #fff;
 }
 
@@ -1972,10 +2032,10 @@ only screen and (min-device-pixel-ratio: 1.5) {
     .refresher .circle {
         background-image: url(../images/2/refresher-big.png);
     }
-    .leftmenu-button.signout {
+    .leftmenu-button.signout:after {
         background-image: url(../images/2/sign-out.png);
     }
-    .leftmenu-button.signout:active {
+    .leftmenu-button.signout:active:after {
         background-image: url(../images/2/sign-out-a.png);
     }
     .comments-list ul li {
@@ -1984,7 +2044,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     .profile-image {
         background-image: url(../images/2/profile-image.png);
     }
-    .post-adder:after {
+    .post-adder .logo .icon:after {
         background-image: url(../images/2/add.png);
     }
     .post-adder .photo {
@@ -1998,6 +2058,9 @@ only screen and (min-device-pixel-ratio: 1.5) {
     }
 	.location-mark {
 		background-image: url(../images/2/location-mark.png);
+	}
+	.location-mark.big {
+		background-image: url(../images/2/location-mark-big.png);
 	}
 
 }

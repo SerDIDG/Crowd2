@@ -26,7 +26,7 @@
 			})();
 			// Avatars Sample
 			(function(){
-				var els = document.querySelectorAll('.avatars-list li');
+				var els = document.querySelectorAll('.avatars-list .item');
 				Array.prototype.forEach.call(els, function(item, i){
 					var a = item.querySelector('.inner'),
 						img = item.querySelector('img');
@@ -90,9 +90,16 @@
 							<a href="#">Crowd</a>
 						</li>
 						<li class="tab-notes">
-							<a href="notes.html">Notes</a>
+							<a href="notes.html">mia feed</a>
 						</li>
 					</ul>
+					<div class="post-adder">
+						<div class="text"></div>
+						<div class="photo"></div>
+						<div class="logo">
+							<div class="icon"></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
