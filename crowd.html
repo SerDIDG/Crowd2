@@ -7,7 +7,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<title>Crowd Surfing</title>
 	
-	<link rel="stylesheet" href="styles/mian.css?43">
+	<link rel="stylesheet" href="styles/main.css?43">
 	<script type="text/javascript" src="scripts/common.js?3"></script>
 	
 	<script type="text/javascript">
@@ -40,7 +40,22 @@
 						isOpen = !isOpen;
 					},
 					isOpen = false;
-				cm.addEvent(button, 'mousedown', handler);
+				//cm.addEvent(button, 'mousedown', handler);
+				cm.addEvent(button, 'touchstart', handler);
+			})();
+			(function(){
+				var button = cm.getByClass('menu-bottom-button')[0],
+					container = cm.getByClass('fixed-layout')[0],
+					handler = function(){
+						if(isOpen){
+							cm.removeClass(container, 'open-bottom');
+						}else{
+							cm.addClass(container, 'open-bottom');
+						}
+						isOpen = !isOpen;
+					},
+					isOpen = false;
+				//cm.addEvent(button, 'mousedown', handler);
 				cm.addEvent(button, 'touchstart', handler);
 			})();
 			// Refresher
@@ -119,6 +134,11 @@
 	
 		<div class="header">
 			<div class="inner">
+				<div class="menu-bottom-button">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 				<div class="menu-button" data-rv-event="touchend:signin(fb)">
 					<span></span>
 					<span></span>
@@ -138,6 +158,17 @@
 						<div class="photo"></div>
 						<div class="logo">
 							<div class="icon"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="paginator">
+				<div class="inner">
+					<div class="r">46</div>
+					<div class="l">39</div>
+					<div class="c">
+						<div class="progress" style="width: 80%;">
+							<div class="inner"></div>
 						</div>
 					</div>
 				</div>
